@@ -1,25 +1,27 @@
-@model List<StoreApp.Models.Product>
+@model List<Product>
 
-<!DOCTYPE html>
-<html lang="en">
+@section Title {
+Product List
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+@section Footer {
+    <p>
+        StoreApp Tüm Hakları Saklıdır
+    </p>
+}
 
-<body>
-    @foreach(StoreApp.Models.Product prd in Model){
-        <div>
-            <h3>@prd.ProductName</h3>
-            <p>@prd.Price</p>
-            <p>
-                <a href="/Product/Get/@prd.ProductId">Get Details</a>
-            </p>
-            <hr>
-        </div>
-    }
-</body>
+@section Top {
+Product Sayfası
+}
 
-</html>
+@foreach (Product prd in Model)
+{
+    <div>
+        <h3>@prd.ProductName</h3>
+        <p>@prd.Price</p>
+        <p>
+            <a href="/Product/Get/@prd.ProductId">Get Details</a>
+        </p>
+        <hr>
+    </div>
+}
