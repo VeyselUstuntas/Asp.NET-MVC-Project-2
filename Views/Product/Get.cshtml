@@ -13,11 +13,14 @@
 <div>
     <h3>@Model.ProductName</h3>
     <p>@Model.Price</p>
-    <a href="/Product/">Products</a>
+    <div class="btn-group">
+
+        <a class="btn btn-sm btn-info" asp-controller="Home" asp-action="Index">
+            Home <i class="fa-solid fa-house" ></i></a>
+        <a class="btn btn-sm btn-outline-info" asp-controller="Product" asp-action="Index">Products</a>
+    </div>
 </div>
 
 @section Footer {
-    <br><br><br>
-    <hr>
 StoreApp Tüm Hakları Saklıdır
 }
