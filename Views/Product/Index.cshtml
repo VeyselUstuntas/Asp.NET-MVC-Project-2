@@ -16,12 +16,5 @@ Product Sayfası
 
 @foreach (Product prd in Model)
 {
-    <div>
-        <h3>@prd.ProductName</h3>
-        <p>@prd.Price</p>
-        <p>
-            <a href="/Product/Get/@prd.ProductId">Get Details</a>
-        </p>
-        <hr>
-    </div>
+    <partial name="_ProductCard" model="@prd"/>
 }
