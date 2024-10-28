@@ -1,24 +1,25 @@
 @model List<StoreApp.Models.Product>
 
-<div>
-    <table border="2">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.ProductId</td>
-                    <td>@item.ProductName</td>
-                    <td>@item.Price</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<!DOCTYPE html>
+<html lang="en">
 
-</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    @foreach(StoreApp.Models.Product prd in Model){
+        <div>
+            <h3>@prd.ProductName</h3>
+            <p>@prd.Price</p>
+            <p>
+                <a href="/Product/Get/@prd.ProductId">Get Details</a>
+            </p>
+            <hr>
+        </div>
+    }
+</body>
+
+</html>
